@@ -13,6 +13,7 @@ library(tm)
 
 text <- df$pride2
 text <- stri_remove_empty(text)
+text <- gsub('[^ -~]', '', text)
 docs <- Corpus(VectorSource(text))
 
 # Clean text... (Assuming English)
@@ -32,4 +33,10 @@ words <- sort(rowSums(matrix),decreasing=TRUE)
 wdf <- data.frame(word = names(words),freq=words)
 
 # Show Word Cloud
-wordcloud2(wdf)
+wordcloud2(data=head(wdf,100),         # Most frequent 100 words
+           color= 'random-dark',
+           size=4,
+           rotateRatio=0,
+           ellipticity= 0.4,
+           fontFamily = 'Baskerville'
+           )
