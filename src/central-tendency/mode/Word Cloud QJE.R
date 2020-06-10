@@ -16,14 +16,14 @@ text <- stri_remove_empty(text)
 docs <- Corpus(VectorSource(text))
 
 # Clean text... (Assuming English)
+docs <- tm_map(docs, content_transformer(tolower))
+docs <- tm_map(docs, removeWords, stopwords("SMART")) # Use American English stop words
 docs <- docs %>%
   tm_map(removeNumbers) %>%
   tm_map(removePunctuation) %>%
   tm_map(stripWhitespace)
-docs <- tm_map(docs, content_transformer(tolower))
-docs <- tm_map(docs, removeWords, stopwords("english"))
 
-# Covert to frequency table
+# Convert to frequency table
 dtm <- TermDocumentMatrix(docs) 
 matrix <- as.matrix(dtm) 
 words <- sort(rowSums(matrix),decreasing=TRUE) 
@@ -32,4 +32,4 @@ words <- sort(rowSums(matrix),decreasing=TRUE)
 wdf <- data.frame(word = names(words),freq=words)
 
 # Show Word Cloud
-wordcloud2(data=wdf)
+wordcloud2(wdf)
