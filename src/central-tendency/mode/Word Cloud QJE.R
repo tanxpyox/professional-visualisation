@@ -1,18 +1,21 @@
 # Word Cloud
-# Hansen, McMahon, and Prat, “Transparency and Deliberation,”, The Quarterly Journal of Economics, 823.
+# Hansen, McMahon, and Prat, “Transparency and Deliberation,”, 
+#   The Quarterly Journal of Economics, 823.
 
 df <- read.csv("data/protected/usa-2020.csv")
+output_dir <- "output"
 
+library(magrittr)
 library(wordcloud)
 library(wordcloud2)
-library(plyr)
+library(stringi)
 library(tm)
 
-text <- df$ex45a
-plyr::compact(text)
+text <- df$pride2
+text <- stri_remove_empty(text)
 docs <- Corpus(VectorSource(text))
 
-# clean text..
+# Clean text... (Assuming English)
 docs <- docs %>%
   tm_map(removeNumbers) %>%
   tm_map(removePunctuation) %>%
@@ -20,10 +23,13 @@ docs <- docs %>%
 docs <- tm_map(docs, content_transformer(tolower))
 docs <- tm_map(docs, removeWords, stopwords("english"))
 
+# Covert to frequency table
 dtm <- TermDocumentMatrix(docs) 
 matrix <- as.matrix(dtm) 
 words <- sort(rowSums(matrix),decreasing=TRUE) 
 
+# Generate Word Cloud
 wdf <- data.frame(word = names(words),freq=words)
 
+# Show Word Cloud
 wordcloud2(data=wdf)
