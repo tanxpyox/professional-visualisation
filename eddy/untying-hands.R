@@ -14,7 +14,8 @@ library(scales)
 custom <- c("Control", "Opponent\nThreat", "Opponent\nReassurance", "Opponent\nNon-Interference", "United Nations\nTreatment", "Military Experts\nTreatment")
 
 p_temp <- ggplot(subset(df, group == 1 | group == 2 | group == 3 | group == 4 | group == 5 | group == 6), 
-                 aes(x=factor(group), y=mean_1)) + geom_errorbar(width=.1, aes(ymin=lower_bound_1, ymax=upper_bound_1)) + 
+                 aes(x=factor(group), y=mean_1)) + 
+          geom_errorbar(width=.1, aes(ymin=lower_bound_1, ymax=upper_bound_1)) + 
           geom_point(size=4, shape=21, fill=c("black", "white", "white", "white", "white", "white")) + 
           xlab("\nExperimental Group") + ylab("Approval Rate (1 = Lowest, 7 = Highest)\n") + 
           scale_x_discrete(breaks=c("1", "2", "3", "4", "5", "6"), labels=custom) + 
