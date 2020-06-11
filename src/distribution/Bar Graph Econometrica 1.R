@@ -1,9 +1,8 @@
 # Bar Graph with Label
 
-# Lars J. Kirkeboen, Edwin Leuven, Magne Mogstad, 
-#   Field of Study, Earnings, and Self-Selection, 
-#   The Quarterly Journal of Economics, Volume 131, 
-#   Issue 3, August 2016, Pages 1057–1111,
+# Eugenio J. Miravete, Katja Seim, and Jeff Thurk, 
+#   “Market Power and the Laffer Curve,” 
+#   Econometrica 86, no. 5 (2020): 1665
 
 # Data: USA 2020 (not released) 
 
@@ -43,11 +42,11 @@ for (i in 1:6) {
 }
 
 # Define colour gradients
-cc <- rep('lightgrey',6)
+cc <- scales::seq_gradient_pal("white", "grey")(seq(0,1,length.out=6))
 
-ggplot(df,aes(x=tmp,y=percentage,fill=factor(pride3), label=pride3)) + 
-  geom_bar(stat="identity", colour = 'black') + 
-  geom_text(aes(label=pride3), position=position_stack(vjust=0.5)) +
+p <- ggplot(df,aes(x=tmp,y=percentage, fill=factor(pride3) )) + 
+  geom_bar(stat="identity",colour=1) + 
+  geom_text(aes(label=pride3), position=position_stack(vjust=0.5)) + 
   scale_fill_manual(values=cc) + 
   scale_y_continuous(labels = scales::percent) +
   labs(
@@ -57,17 +56,14 @@ ggplot(df,aes(x=tmp,y=percentage,fill=factor(pride3), label=pride3)) +
   ) +
   theme_bw() +
   theme(
-    #   panel.grid.major.x = element_blank(),
+    legend.position = "bottom",
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),
     axis.line = element_line(size=0.5),
     panel.border=element_blank(),
-    legend.position = "none"
-  ) + 
-  coord_flip()
-  
+  )
 
-ggsave(path=output_dir, filename="Bar Graph 1.png",  width=9, height=6)
+ggsave(path=output_dir, filename="Bar Graph 3.png",  width=9, height=6)
 
 # Save example to src folder
-# ggsave(path='src/distribution', filename='Bar Graph QJE 1-example.png', width=9, height = 6)
+# ggsave(path='src/distribution', filename='Bar Graph Econometrica 1-example.png', width=9, height = 6)
