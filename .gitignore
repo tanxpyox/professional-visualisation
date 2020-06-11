@@ -40,7 +40,8 @@ vignettes/*.pdf
 
 # Protected data files
 data/protected/*
-eddy/*.csv
+eddy/*
 output/*
 
+# Windows Cache Files
 Thumbs.db
