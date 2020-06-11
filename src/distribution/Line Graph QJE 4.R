@@ -1,4 +1,4 @@
-# Line graph, Multiple curves (real, diff line styles)
+# Line graph (Dotted), Multiple curves (real, diff line styles)
 
 # Emmanuel Saez and Gabriel Zucman, 
 #   “Wealth Inequality in the United States since 1913: Evidence from Capitalized Income Tax Data,” 
