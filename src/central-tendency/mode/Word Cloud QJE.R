@@ -2,6 +2,8 @@
 # Hansen, McMahon, and Prat, “Transparency and Deliberation,”, 
 #   The Quarterly Journal of Economics, 823.
 
+# Data: USA 2020 (not released); pride2 
+
 df <- read.csv("data/protected/usa-2020.csv")
 output_dir <- "output"
 

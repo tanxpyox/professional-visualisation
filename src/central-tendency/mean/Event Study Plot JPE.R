@@ -26,20 +26,23 @@ df <- master %>%
 
 df$label <- ifelse(df$enforce11==0, "No Enforcement", "Enforcement")
 
-p <- ggplot(df,aes(x=period, y=mean, group=label, color=label)) + 
+p <- ggplot(df,aes(x=period, y=mean, group=label, color=label, shape=label)) + 
      geom_point(size=3) + 
      geom_line(size=1) + 
      geom_errorbar(aes(ymax=mean+se,ymin=mean-se),width=0.1) + 
      theme_bw() + 
      scale_y_continuous(labels = scales::percent, limits=c(0,1)) +
      scale_colour_manual(values=c('darkgrey','black')) + 
+     scale_shape_manual(values=c(1,19)) + 
      xlab("Round") + ylab("Incidence of War") +
      theme(
        legend.title = element_blank(), 
        legend.position = "bottom",
        panel.grid.major.x = element_blank(),
        panel.grid.minor.x = element_blank(),
-       panel.grid.minor.y = element_blank()
+       panel.grid.minor.y = element_blank(),
+       axis.line = element_line(size=0.5),
+       panel.border=element_blank(),
      )
 
 ggsave(path=output_dir, filename="Bar Plot.png",  width=9, height=6)

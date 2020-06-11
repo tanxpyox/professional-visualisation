@@ -3,6 +3,8 @@
 # Arthur Blouin and Sharun W. Mukand, "Erasing Ethnicity? Propaganda, Nation Building, and Identity in Rwanda," 
 #   Journal of Political Economy 127, no. 3 (2019): 1046
 
+# Data USA 2020 (not released); Security Dilemma
+
 master <- read.csv("data/protected/usa-2020.csv")
 output_dir="output"
 
