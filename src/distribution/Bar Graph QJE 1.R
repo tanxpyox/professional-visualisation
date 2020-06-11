@@ -45,9 +45,23 @@ for (i in 1:6) {
 # Define colour gradients
 cc <- rep('lightgrey',6)
 
+labels = c('Economic\nAchievenments', 
+            'Cultural\nand\nArtistic\nAchieve-\nments', 
+            'Technological\nand\nScientific\nAchievements',
+            'Moral values',
+            'Democratic values',
+            'Public\nservices'
+            )
+
+df$label = NA
+for (i in 1:6){
+  df$label[i] <- labels[df$pride3[i]]
+}
+
+
 ggplot(df,aes(x=tmp,y=percentage,fill=factor(pride3), label=pride3)) + 
   geom_bar(stat="identity", colour = 'black') + 
-  geom_text(aes(label=pride3), position=position_stack(vjust=0.5)) +
+  geom_text(aes(label=label), position=position_stack(vjust=0.5)) +
   scale_fill_manual(values=cc) + 
   scale_y_continuous(labels = scales::percent) +
   labs(
