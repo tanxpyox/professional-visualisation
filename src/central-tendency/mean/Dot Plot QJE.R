@@ -14,16 +14,21 @@ library(ggplot2)
 df <- read_dta("data/larcom-2017.dta")
 output_dir="output"
 
-p <- plot(df$duration_ ~ df$day, 
-     xlab="Day", 
-     ylab="Mean duration (mins.)", 
-     pch=19) + 
-  abline(v=16.5) + 
-  abline(v=18.5)
+p <- ggplot(df,aes(x=day,y=duration_)) + 
+      geom_point(size=3) + 
+      geom_vline(aes(xintercept=16.5)) + 
+      geom_vline(aes(xintercept=18.5)) + 
+      theme_bw() + 
+      labs(
+        x = "Day",
+        y = "Mean duration (mins.)"
+      ) + 
+      theme(
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()
+      )
 
-dev.copy(jpeg,"output/Dot Plot.jpg")
-dev.off()
+ggsave(path=output_dir, filename="Dot Plot QJE.png", width=8, height=6)
 
 # Save as Example
-# dev.copy(jpeg,"src/central-tendency/mean/Dot Plot QJE-example.jpg")
-# dev.off()
+# ggsave(path='src/central-tendency/mean', filename='Dot Plot QJE-example.png', width=8, height=6)
