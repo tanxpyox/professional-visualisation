@@ -45,4 +45,4 @@ p <- ggplot(df,aes(x=period, y=mean, group=label, color=label)) +
 ggsave(path=output_dir, filename="Bar Plot.png",  width=9, height=6)
 
 # Save example to src folder
-# ggsave(path='src/central-tendency/mean', filename='Event Study Plot JPE.png', width=9, height = 6)
+# ggsave(path='src/central-tendency/mean', filename='Event Study Plot JPE-example.png', width=9, height = 6)
