@@ -66,7 +66,7 @@ p <- ggplot(df,aes(x=tmp,y=percentage, fill=factor(pride3) )) +
     panel.grid.minor.x = element_blank(),
     panel.grid.minor.y = element_blank(),
     axis.line = element_line(size=0.5),
-    panel.border=element_blank(),
+    panel.border=element_blank()
   )
 
 ggsave(path=output_dir, filename="Bar Graph 3.png",  width=9, height=6)
