@@ -1,10 +1,8 @@
 # Bar Graph Grouped
 
-# Javier Cravino, Andrei A. Levchenko, Multinational Firms 
-#   and International Business Cycle Transmission, 
-#   The Quarterly Journal of Economics, 
-#   Volume 132, Issue 2, May 2017, Pages 921–962, 
-#   DOI:10.1093/qje/qjw043 
+# David J. Deming, “The Growing Importance of Social Skills 
+#   in the Labor Market,” The Quarterly Journal of Economics 132, no. 4 (2017): 
+#   1596, DOI:10.1093/qje/qjx022.
 
 # Data: emulated from ibid, Fig 1
 
@@ -33,7 +31,7 @@ ggplot(df,aes(country,val,fill = class, color = class)) +
   )
 
 # Save individual Panels
-ggsave(path=output_dir, filename="Bar Graph QJE 3.png", width=8, height=6)
+# ggsave(path=output_dir, filename="Bar Graph QJE 4.png", width=8, height=6)
 
 # Save as Example
-# ggsave(path="src/others/frequency", filename="Bar Graph QJE 3-example.png", width=8, height=6)
+# ggsave(path="src/others/frequency", filename="Bar Graph QJE 4-example.png", width=8, height=6)
