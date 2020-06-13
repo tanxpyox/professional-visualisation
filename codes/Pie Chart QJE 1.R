@@ -34,7 +34,7 @@ ggplot(df,aes(x=0, y=p, fill  = factor(bell))) +
                                "4",
                                "5",
                                "6",
-                               "Decrease Greatly (7)")
+                               "Increase Greatly (7)")
                     ) + 
   theme_minimal() +
   theme(
