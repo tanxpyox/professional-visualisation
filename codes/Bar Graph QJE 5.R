@@ -19,7 +19,7 @@ df2 <- filter(df, stem == 0)
 
 p1 <- ggplot(df1,aes(occ,diff)) +
   geom_bar(stat="identity", fill = 	'#194670') +
-  ggtitle("STEM Occupiations") + 
+  ggtitle("STEM Occupations") + 
   coord_flip(ylim = c(-.2,.6)) + 
   theme_bw() +
   theme(

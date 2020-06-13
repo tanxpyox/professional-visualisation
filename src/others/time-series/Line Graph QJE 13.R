@@ -92,6 +92,7 @@ p3 <- ggplot(df, aes(age, infection, linetype= class)) +
 pc <- ggarrange(p1, p2, p3, 
           ncol=1, nrow=3, 
           labels = "AUTO",
+          align = "v",
           common.legend = FALSE, legend="bottom")
 
 # Save individual Panels

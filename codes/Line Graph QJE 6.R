@@ -18,10 +18,11 @@ g <- function(x, p) 0.005*exp((p-1)*(x-20)/100)
 
 #Main frame
 df <- data.frame(
-  theta = c(3,1,0.8),
-  cc = c('red', 'blue', 'black'),
-  lc = c('solid', 'longdash', 'dotted')  
+  theta = c(3,1,0.8) 
 )
+
+cc = c('red', 'blue', 'black')
+lc = c('solid', 'longdash', 'dotted') 
 
 # Dataset for first plot
 p1df <- df %>%
@@ -79,9 +80,18 @@ p2 <- ggplot(p2df, aes(x,y,color = factor(theta), linetype=factor(theta))) +
     panel.border=element_blank()
   )
 
+# combine plots
+pc <- ggarrange(p1, p2, 
+                ncol=1, nrow=2, 
+                labels = "AUTO",
+                align = "v",
+                common.legend = FALSE, legend="bottom")
 
 ggsave(path=output_dir, filename="Line Graph QJE 6A.png", p1, width=8, height=6)
 ggsave(path=output_dir, filename="Line Graph QJE 6B.png", p2, width=8, height=6)
-ggsave(path=output_dir, filename="Line Graph QJE 6 Combined.png", arrangeGrob(p1,p2), width=8, height=10)
+ggsave(path=output_dir, filename="Line Graph QJE 6 Combined.png", pc, width=8, height=10)
+
 # Save as Example
-ggsave(path="src/relationship/", filename="Line Graph QJE 6-example.png", arrangeGrob(p1,p2), width=8, height=10)
+# ggsave(path="src/relationship/", filename="Line Graph QJE 6A-example.png", p1, width=8, height=10)
+# ggsave(path="src/relationship/", filename="Line Graph QJE 6B-example.png", p2, width=8, height=10)
+# ggsave(path="src/relationship/", filename="Line Graph QJE 6Combined-example.png", pc, width=8, height=10)

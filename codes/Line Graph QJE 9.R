@@ -82,6 +82,7 @@ p2 <- ggplot(p2df, aes(x=x,y=y,linetype=label)) +
 ggarrange(p1, p2, p1, p2, p1, p2, 
           ncol=3, nrow=2, 
           labels = "AUTO",
+          align = "hv",
           common.legend = TRUE, legend="bottom")
 
 ggsave(path=output_dir, filename="Line Graph QJE 9.png", width=8, height=6)
