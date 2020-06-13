@@ -1,9 +1,9 @@
-# Line Graph (with data points) 
+# Line Graph (with data points)
 
-# Amy Finkelstein, Matthew Gentzkow, Heidi Williams, 
+# Amy Finkelstein, Matthew Gentzkow, Heidi Williams,
 #   Sources of Geographic Variation in Health Care: Evidence From Patient Migration,
 #   The Quarterly Journal of Economics, Volume 131, Issue 4, November 2016, Pages 1681–1726,
-#   https://doi.org/10.1093/qje/qjw023 
+#   https://doi.org/10.1093/qje/qjw023
 
 # Data: Quek (2017) Rationalist Experiments on War, Fig 2
 
@@ -24,17 +24,17 @@ df <- master %>%
 
 cc <- c("Enforcement in Rounds 1-5" = 'black')
 
-p <- ggplot(df,aes(x=factor(period),y=mean,color=condition)) + 
-  geom_point(size=3) + 
+p <- ggplot(df,aes(x=factor(period),y=mean,color=condition)) +
+  geom_point(size=3) +
   geom_line(aes(x=period,y=mean)) +
   scale_y_continuous(labels = scales::percent, limits=c(0,1)) +
   scale_color_manual(values=cc) +
-  theme_bw() + 
+  theme_bw() +
   labs(
     x = "Round",
     y = "Incidence of War",
     color = "Legend"
-  ) + 
+  ) +
   theme(
     panel.grid.minor = element_blank(),
     panel.grid.major.x = element_blank(),

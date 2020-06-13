@@ -1,9 +1,9 @@
 # Multiple time series, multiple panels
 
-# Jérôme Adda, Economic Activity and the Spread of Viral Diseases: 
-#   Evidence from High Frequency Data , 
-#   The Quarterly Journal of Economics, 
-#   Volume 131, Issue 2, May 2016, Pages 891–941, 
+# Jérôme Adda, Economic Activity and the Spread of Viral Diseases:
+#   Evidence from High Frequency Data ,
+#   The Quarterly Journal of Economics,
+#   Volume 131, Issue 2, May 2016, Pages 891–941,
 #   DOI:10.1093/qje/qjw005
 
 # Data: ibid Figure II
@@ -12,11 +12,12 @@ library(ggplot2)
 library(dplyr)
 library(magrittr)
 library(gridExtra)
+output_dir="output"
 
 # Plot 1
 df <- read.csv("data/adda-2016-flu.csv")
 
-p1 <- ggplot(df, aes(age, infection, linetype= class)) + 
+p1 <- ggplot(df, aes(age, infection, linetype= class)) +
   geom_line(size=1) +
   ggtitle("Flu-like Illnesses")+
   theme_bw() +
@@ -41,7 +42,7 @@ p1 <- ggplot(df, aes(age, infection, linetype= class)) +
 # Plot 2
 df <- read.csv("data/adda-2016-diarrhea.csv")
 
-p2 <- ggplot(df, aes(age, infection, linetype= class)) + 
+p2 <- ggplot(df, aes(age, infection, linetype= class)) +
   geom_line(size=1) +
   ggtitle("Acute Diarrhea")+
   theme_bw() +
@@ -66,7 +67,7 @@ p2 <- ggplot(df, aes(age, infection, linetype= class)) +
 # Plot 3
 df <- read.csv("data/adda-2016-chickenpox.csv")
 
-p3 <- ggplot(df, aes(age, infection, linetype= class)) + 
+p3 <- ggplot(df, aes(age, infection, linetype= class)) +
   geom_line(size=1) +
   ggtitle("Chickenpox")+
   theme_bw() +
@@ -89,8 +90,8 @@ p3 <- ggplot(df, aes(age, infection, linetype= class)) +
   )
 
 # combine plots
-pc <- ggarrange(p1, p2, p3, 
-          ncol=1, nrow=3, 
+pc <- ggarrange(p1, p2, p3,
+          ncol=1, nrow=3,
           labels = "AUTO",
           align = "v",
           common.legend = FALSE, legend="bottom")

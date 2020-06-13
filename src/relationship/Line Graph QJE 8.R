@@ -1,6 +1,6 @@
 # Line graph Multiple overlay from given formula
 
-# Thomas Sampson, “Dynamic Selection: An Idea Flows Theory of Entry, Trade, and Growth,” 
+# Thomas Sampson, “Dynamic Selection: An Idea Flows Theory of Entry, Trade, and Growth,”
 # The Quarterly Journal of Economics 131, no. 1 (2016): 353
 
 # Data: emulated from ibid, Figure II
@@ -9,6 +9,7 @@ library(ggplot2)
 library(magrittr)
 library(haven)
 library(tidyverse)
+output_dir="output"
 
 #Define Function
 f <- function(x, a, b) a * exp(b*x)
@@ -28,12 +29,12 @@ p1df <- df %>%
   mutate(y = f(x,para1,para2))
 
 # plot 1
-p1 <- ggplot(p1df, aes(x=x,y=y,linetype=label)) + 
-  geom_line (size = 1) + 
+p1 <- ggplot(p1df, aes(x=x,y=y,linetype=label)) +
+  geom_line (size = 1) +
   coord_cartesian(
     ylim = c(1,2.5)
   ) +
-  scale_linetype_manual(values = lc) + 
+  scale_linetype_manual(values = lc) +
   scale_y_continuous(
     sec.axis = sec_axis(~ (.-1) * 3 +1, name = "Total Gains / Static Gains")
   ) +
@@ -42,13 +43,13 @@ p1 <- ggplot(p1df, aes(x=x,y=y,linetype=label)) +
     y = "Trade growth / Autarky growth",
     linetype = "Legend"
   ) +
-  theme_bw() + 
+  theme_bw() +
   theme(
     panel.grid.major = element_blank(),
     panel.grid.minor = element_blank(),
     legend.title = element_blank(),
     legend.position = c(0.2,0.8)
-  ) 
+  )
 
 print(p1)
 

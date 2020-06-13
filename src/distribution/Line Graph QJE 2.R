@@ -1,7 +1,7 @@
 # Line graph, Multiple curves (real)
 
-# Sarah Baird, Joan Hamory Hicks, Michael Kremer, and Edward Miguel, 
-#   “Worms at Work: Long-run Impacts of a Child Health Investment,” 
+# Sarah Baird, Joan Hamory Hicks, Michael Kremer, and Edward Miguel,
+#   “Worms at Work: Long-run Impacts of a Child Health Investment,”
 #   The Quarterly Journal of Economics 131, no. 4 (2016): 1660,
 
 # Data: emulated from ibid, Fig II
@@ -9,6 +9,7 @@
 library(ggplot2)
 library(dplyr)
 library(tidyr)
+output_dir="output"
 
 df <- read.csv("data/baird-2016.csv")
 
@@ -24,14 +25,14 @@ p <- ggplot(df, aes(x = hours, y = density, color = type)) +
     x = "Hours worked in self-employment, males",
     y = "Kernel density",
     color = "Legend"
-  ) + 
-  scale_y_continuous(labels=fmt_dcimals(2)) + 
-  scale_color_manual(values = c('darkgrey','black')) + 
+  ) +
+  scale_y_continuous(labels=fmt_dcimals(2)) +
+  scale_color_manual(values = c('darkgrey','black')) +
   theme(
     panel.grid.major.x = element_blank(),
     panel.grid.minor = element_blank(),
     legend.position = "right",
-    legend.direction = "vertical",        
+    legend.direction = "vertical",
     legend.background = element_blank(),
     legend.box.background = element_rect(colour = "black")
   )
