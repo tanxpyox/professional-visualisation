@@ -1,12 +1,13 @@
 # Bar Graph Grouped
 
-# David J. Deming, “The Growing Importance of Social Skills 
-#   in the Labor Market,” The Quarterly Journal of Economics 132, no. 4 (2017): 
+# David J. Deming, “The Growing Importance of Social Skills
+#   in the Labor Market,” The Quarterly Journal of Economics 132, no. 4 (2017):
 #   1596, DOI:10.1093/qje/qjx022.
 
 # Data: emulated from ibid, Fig 1
 
 library(ggplot2)
+output_dir="output"
 
 df <- read.csv("data/cravino-2016-fig1.csv", stringsAsFactors = FALSE)
 
@@ -15,9 +16,9 @@ df$country = factor(df$country, levels = rev(unique(df$country)))
 
 ggplot(df,aes(country,val,fill = class, color = class)) +
   geom_bar(stat="identity",position = position_dodge()) +
-  scale_fill_manual(values = c('darkgrey', 'white')) + 
-  scale_color_manual(values = c(NA, 'black')) + 
-  scale_y_continuous(expand = c(0,0)) + 
+  scale_fill_manual(values = c('darkgrey', 'white')) +
+  scale_color_manual(values = c(NA, 'black')) +
+  scale_y_continuous(expand = c(0,0)) +
   coord_flip() + theme_bw() +
   theme(
     panel.grid.major.y = element_blank(),

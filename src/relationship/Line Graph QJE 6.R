@@ -93,6 +93,6 @@ ggsave(path=output_dir, filename="Line Graph QJE 6B.png", p2, width=8, height=6)
 ggsave(path=output_dir, filename="Line Graph QJE 6 Combined.png", pc, width=8, height=10)
 
 # Save as Example
-# ggsave(path="src/relationship/", filename="Line Graph QJE 6A-example.png", p1, width=8, height=10)
-# ggsave(path="src/relationship/", filename="Line Graph QJE 6B-example.png", p2, width=8, height=10)
+# ggsave(path="src/relationship/", filename="Line Graph QJE 6A-example.png", p1, width=8, height=6)
+# ggsave(path="src/relationship/", filename="Line Graph QJE 6B-example.png", p2, width=8, height=6)
 # ggsave(path="src/relationship/", filename="Line Graph QJE 6Combined-example.png", pc, width=8, height=10)

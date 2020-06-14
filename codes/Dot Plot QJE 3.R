@@ -1,8 +1,8 @@
 # Dot Plot, horizontal, control = coloured
 
-# Isaiah Andrews, Matthew Gentzkow, and Jesse M. Shapiro, 
-#   “Measuring the Sensitivity of Parameter Estimates to Estimation Moments,” 
-#   The Quarterly Journal of Economics 132, no. 4 (2017): 1573, 
+# Isaiah Andrews, Matthew Gentzkow, and Jesse M. Shapiro,
+#   “Measuring the Sensitivity of Parameter Estimates to Estimation Moments,”
+#   The Quarterly Journal of Economics 132, no. 4 (2017): 1573,
 #   DOI:10.1093/qje/qjx023.
 
 # Data: USA 2020 (protected)
@@ -10,6 +10,7 @@
 library(ggplot2)
 library(dplyr)
 df <- read.csv("data/protected/usa-2020.csv")
+output_dir="output"
 
 # Clean data
 df <- master %>%
@@ -25,7 +26,7 @@ df <- master %>%
     error = bell_se
   )
 
-df$label = 
+df$label =
   c("Control Group",
     "China's Defence Improves and\nOffence Remains Same",
     "China Spends More Due to Others",
@@ -40,17 +41,17 @@ ggplot(df, aes(factor(group), pt)) +
   geom_hline(aes(yintercept =4), linetype = 'dotted') +
   scale_x_discrete(
     labels = df$label
-  ) + 
+  ) +
   scale_fill_manual(
     values = c('blue',rep('white',4))
-  ) + 
+  ) +
   scale_color_manual(
     values = c('blue',rep('black',4))
-  ) + 
+  ) +
   labs(
     x = "Groups",
     y = "Preferences"
-    ) + 
+    ) +
   coord_flip(ylim = c(4,5.5)) +
   theme_bw() +
   theme(

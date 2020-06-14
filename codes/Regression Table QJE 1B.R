@@ -1,15 +1,16 @@
 # Graphical Regression Table
 
-# Amy Finkelstein, Matthew Gentzkow, Heidi Williams, 
+# Amy Finkelstein, Matthew Gentzkow, Heidi Williams,
 #   Sources of Geographic Variation in Health Care: Evidence From Patient Migration,
 #   The Quarterly Journal of Economics, Volume 131, Issue 4, November 2016, Pages 1681–1726,
-#   https://doi.org/10.1093/qje/qjw023 
+#   https://doi.org/10.1093/qje/qjw023
 
 # Data: USA 2020 (protected)
 
 library(ggplot2)
 library(dplyr)
 library(magrittr)
+output_dir="output"
 
 master <- read.csv("data/protected/usa-2020.csv")
 
@@ -26,7 +27,7 @@ df <- master %>%
     error = bell_se
   )
 
-df$label = 
+df$label =
   c("Control Group",
     "China's Defence Improves\nand Offence Remains Same",
     "China Spends More\nDue to Others",
