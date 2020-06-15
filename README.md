@@ -8,8 +8,9 @@ git clone https://github.com/tanxpyox/professional-visualisation
 ```
 
 ## Note
-* Please find the relevant R scripts in [`codes/`](codes/) or [`src`](src/) (sorted according to subject).
-* Output samples can be found in the [`gallery/`](gallery/) directory.
+* Please find the relevant R scripts in [`src/`](src/) (sorted according to subject).
+* Most datasets used to reproduce the example output graphs can be found in the [`data/`](data/) directory, except those that are not publicly available.
+* All scripts and output samples are collected and placed in the [`release` branch](https://github.com/tanxpyox/professional-visualisation/tree/release). 
 
 ## Usage
 * Open the project by double-clicking the `professional-visualisation.Rproj` file. This will configure the root directory to be the project working directory, and allow file input/output to function normally.
