@@ -12,8 +12,8 @@ cp **/*.R deploy/codes
 cp **/*.png deploy/gallery
 
 # Clean Rproject file from codes if exist
-if [ -f deploy/codes/*.Rproject ]; then
-  rm deploy/codes/*.Rproject
+if [ -f deploy/codes/*.Rproj ]; then
+  rm deploy/codes/*.Rproj
 fi
 
 # Write to manifest
