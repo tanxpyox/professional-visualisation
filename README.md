@@ -1,6 +1,7 @@
 # Statistical Visualisation Template Library
 
-[![](https://img.shields.io/badge/Download-All%20files-blue?style=for-the-badge)](https://github.com/tanxpyox/professional-visualisation/archive/master.zip)
+[![](https://img.shields.io/badge/Download-Source%20files-blue?logo=github&style=for-the-badge)](https://github.com/tanxpyox/professional-visualisation/archive/master.zip)
+[![](https://img.shields.io/badge/Download-output%20files-orange?logo=R&style=for-the-badge)](https://github.com/tanxpyox/professional-visualisation/archive/release.zip)
 
 Clone this repo:
 ```sh
