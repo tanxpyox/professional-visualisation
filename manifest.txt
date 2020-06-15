@@ -39,5 +39,4 @@ Scatter Plot Econometrica 1.R
 Scatter Plot Econometrica 2.R
 Scatter Plot JPE 1.R
 Word Cloud QJE.R
-professional-visualisation.Rproj
 theme-setup.R
