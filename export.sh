@@ -17,4 +17,4 @@ if [ -f deploy/codes/*.Rproject ]; then
 fi
 
 # Write to manifest
-ls -R | grep ".R" | sort | uniq > deploy/manifest.txt
+ls deploy/codes | sort | uniq > deploy/manifest.txt
