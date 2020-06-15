@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
 
     # Create deploy files
-    - name: Run a multi-line script
+    - name: Export files
       run: |
         chmod u+x ./export.sh
         ./export.sh
