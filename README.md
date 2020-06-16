@@ -12,6 +12,6 @@ git clone -b=release https://github.com/tanxpyox/professional-visualisation
 * All R scripts in this repo can be found in the [`codes`](codes/) directory.
 * Their respective graphs can be found in the [`gallery`](gallery/) directory.
 
-## License
-Files in this repo, *except the datasets*, are released under the General Public License, v3 or later.
+## Licence
+Files in this repo, *except the datasets*, are released under the [MIT Licence](LICENCE)
   * Please reach out to the respective authors of the dataset for permission to reuse.
