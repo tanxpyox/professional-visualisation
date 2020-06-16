@@ -19,5 +19,5 @@ git clone https://github.com/tanxpyox/professional-visualisation
   * cmd/terminal command: `mkdir output`
 
 ## Licence
-Files in this repo, *except the datasets*, are released under the [MIT Licence](LICENSE).
+Files in this repo, *except the datasets*, are released under the [MIT Licence](LICENCE).
   * Please reach out to the respective authors of the dataset for permission to reuse.
