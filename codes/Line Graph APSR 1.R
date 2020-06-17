@@ -157,7 +157,8 @@ legend(
 
 while (!is.null(dev.list()))  dev.off()
 
-rsvg_png(svg = "output/Line Graph APSR 1.svg",
-     file = "src/distribution/Line Graph APSR 1-example.png",
-     width = 2400,
-     height = 1800)
+# Save as example
+# rsvg_png(svg = "output/Line Graph APSR 1.svg",
+#      file = "src/distribution/Line Graph APSR 1-example.png",
+#      width = 2400,
+#      height = 1800)

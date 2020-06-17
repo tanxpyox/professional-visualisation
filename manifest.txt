@@ -18,6 +18,9 @@ Histogram Econometrica 1.R
 Histogram Econometrica 2.R
 Histogram QJE 1.R
 Line Graph APSR 1.R
+Line Graph APSR 2.R
+Line Graph APSR 3.R
+Line Graph APSR 4.R
 Line Graph QJE 1.R
 Line Graph QJE 10.R
 Line Graph QJE 11.R
