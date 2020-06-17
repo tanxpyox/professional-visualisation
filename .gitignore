@@ -43,6 +43,7 @@ data/protected/*
 !data/protected/*.R
 eddy/*
 output/*
+deploy/*
 
 # Windows Cache Files
 Thumbs.db
