@@ -1,8 +1,8 @@
 # Word Cloud
-# Hansen, McMahon, and Prat, “Transparency and Deliberation,”, 
+# Hansen, McMahon, and Prat, “Transparency and Deliberation,”,
 #   The Quarterly Journal of Economics, 823.
 
-# Data: USA 2020 (not released); pride2 
+# Data: USA 2020 (not released); pride2
 
 df <- read.csv("data/protected/usa-2020.csv")
 output_dir <- "output"
@@ -27,9 +27,9 @@ docs <- docs %>%
   tm_map(stripWhitespace)
 
 # Convert to frequency table
-dtm <- TermDocumentMatrix(docs) 
-matrix <- as.matrix(dtm) 
-words <- sort(rowSums(matrix),decreasing=TRUE) 
+dtm <- TermDocumentMatrix(docs)
+matrix <- as.matrix(dtm)
+words <- sort(rowSums(matrix),decreasing=TRUE)
 
 # Generate Word Cloud
 wdf <- data.frame(word = names(words),freq=words)

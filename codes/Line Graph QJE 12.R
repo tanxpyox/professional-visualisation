@@ -1,8 +1,8 @@
 # Multiple time series
 
-# Emmanuel Saez and Gabriel Zucman, “Wealth Inequality in the United States since 1913: 
-#   Evidence from Capitalized Income Tax Data,” 
-#   The Quarterly Journal of Economics 131, no. 2 (2016): 548, 
+# Emmanuel Saez and Gabriel Zucman, “Wealth Inequality in the United States since 1913:
+#   Evidence from Capitalized Income Tax Data,”
+#   The Quarterly Journal of Economics 131, no. 2 (2016): 548,
 #   DOI:10.1093/qje/qjw004
 
 # Data: ibid, Fig VIII panel A
@@ -15,10 +15,10 @@ df <- read.csv("data/saez-2016-fig8.csv")
 output_dir = "output"
 
 ggplot(df, aes(x=year))+
-  geom_line(aes(y=top0.1, color = '1', linetype = '1'), size=1) + 
-  geom_line(aes(y=bottom90, color = '2', linetype = '2'),  size=1) + 
-  geom_line(aes(y=pop, color = '3', linetype = '3'), size=1) + 
-  ggtitle("Share of Wealth held by elderly households (aged 65+)") + 
+  geom_line(aes(y=top0.1, color = '1', linetype = '1'), size=1) +
+  geom_line(aes(y=bottom90, color = '2', linetype = '2'),  size=1) +
+  geom_line(aes(y=pop, color = '3', linetype = '3'), size=1) +
+  ggtitle("Share of Wealth held by elderly households (aged 65+)") +
   scale_linetype_manual(
     name = "Legend",
     values = c(

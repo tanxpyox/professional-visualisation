@@ -1,6 +1,6 @@
 # Scatter Plot, discrete, bubbles
 
-# Abeler, J., Nosenzo, D. and Raymond, C. (2019), 
+# Abeler, J., Nosenzo, D. and Raymond, C. (2019),
 #   Preferences for Truth‐Telling. Econometrica,
 #   87: 1115-1153. doi:10.3982/ECTA14673
 
@@ -20,10 +20,10 @@ df <- master %>%
   )
 
 # PLot
-p <- ggplot(data = df, aes(x=factor(draw), y=factor(report), size=count)) + 
+p <- ggplot(data = df, aes(x=factor(draw), y=factor(report), size=count)) +
   geom_point(colour = '#5E5E5E') +
-  scale_size_continuous(range = c(1,15)) + 
-  theme_bw() + 
+  scale_size_continuous(range = c(1,15)) +
+  theme_bw() +
   labs(
     x = "true number drawn on computer",
     y = "report",

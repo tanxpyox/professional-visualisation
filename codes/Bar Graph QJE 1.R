@@ -1,11 +1,11 @@
 # Bar Graph with Label
 
-# Lars J. Kirkeboen, Edwin Leuven, Magne Mogstad, 
-#   Field of Study, Earnings, and Self-Selection, 
-#   The Quarterly Journal of Economics, Volume 131, 
+# Lars J. Kirkeboen, Edwin Leuven, Magne Mogstad,
+#   Field of Study, Earnings, and Self-Selection,
+#   The Quarterly Journal of Economics, Volume 131,
 #   Issue 3, August 2016, Pages 1057–1111,
 
-# Data: USA 2020 (not released) 
+# Data: USA 2020 (not released)
 
 master <- read.csv("data/protected/usa-2020.csv")
 output_dir="output"
@@ -31,10 +31,10 @@ sum_table <- master %>%
 
 df <- master %>%
   filter(!is.na(tmp) & tmp!="others") %>% # filter out 'others'
-  group_by(tmp,pride3) %>% 
+  group_by(tmp,pride3) %>%
   summarise(
     count = n(),
-  ) 
+  )
 
 df$percentage <- NA
 
@@ -45,8 +45,8 @@ for (i in 1:6) {
 # Define colour gradients
 cc <- rep('lightgrey',6)
 
-labels = c('Economic\nAchievenments', 
-            'Cultural\nand\nArtistic\nAchieve-\nments', 
+labels = c('Economic\nAchievenments',
+            'Cultural\nand\nArtistic\nAchieve-\nments',
             'Technological\nand\nScientific\nAchievements',
             'Moral values',
             'Democratic values',
@@ -59,10 +59,10 @@ for (i in 1:6){
 }
 
 
-ggplot(df,aes(x=tmp,y=percentage,fill=factor(pride3), label=pride3)) + 
-  geom_bar(stat="identity", colour = 'black') + 
+ggplot(df,aes(x=tmp,y=percentage,fill=factor(pride3), label=pride3)) +
+  geom_bar(stat="identity", colour = 'black') +
   geom_text(aes(label=label), position=position_stack(vjust=0.5)) +
-  scale_fill_manual(values=cc) + 
+  scale_fill_manual(values=cc) +
   scale_y_continuous(labels = scales::percent) +
   labs(
     x = "Categories",
@@ -77,9 +77,9 @@ ggplot(df,aes(x=tmp,y=percentage,fill=factor(pride3), label=pride3)) +
     axis.line = element_line(size=0.5),
     panel.border=element_blank(),
     legend.position = "none"
-  ) + 
+  ) +
   coord_flip()
-  
+
 
 ggsave(path=output_dir, filename="Bar Graph 1.png",  width=9, height=6)
 

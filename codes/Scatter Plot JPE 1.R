@@ -1,7 +1,7 @@
 # Scatter Plot, Bubbles
 
-# Matteo Maggiori, Brent Neiman, and Jesse Schreger, 
-#   "International Currencies and Capital Allocation," 
+# Matteo Maggiori, Brent Neiman, and Jesse Schreger,
+#   "International Currencies and Capital Allocation,"
 #   Journal of Political Economy 128, no. 6 (June 2020): 2019-2066.
 
 # Data: Generated
@@ -26,10 +26,10 @@ for (i in 1:100){
 df <- data.frame(iv = x, dv=y, value = val)
 
 # PLot
-p <- ggplot(data = df, aes(x=iv, y=dv, size=value)) + 
+p <- ggplot(data = df, aes(x=iv, y=dv, size=value)) +
   geom_point(shape = 1, colour = 'blue') +
-  scale_size_continuous(range = c(1,15)) + 
-  theme_bw() + 
+  scale_size_continuous(range = c(1,15)) +
+  theme_bw() +
   labs(
     x = "Independent Variable",
     y = "Dependent Variable",

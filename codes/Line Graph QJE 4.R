@@ -1,7 +1,7 @@
 # Line graph (Dotted), Multiple curves (real, diff line styles)
 
-# Emmanuel Saez and Gabriel Zucman, 
-#   “Wealth Inequality in the United States since 1913: Evidence from Capitalized Income Tax Data,” 
+# Emmanuel Saez and Gabriel Zucman,
+#   “Wealth Inequality in the United States since 1913: Evidence from Capitalized Income Tax Data,”
 #   The Quarterly Journal of Economics 131, no. 2 (2016): 548,
 
 # Data: emulated from Quek (2017) Rationalist Experiments on War, Fig 2
@@ -23,19 +23,19 @@ df <- master %>%
 
 
 # build plot
-p <- ggplot(df,aes(x=factor(period),y=mean,linetype=condition)) + 
-  geom_point(size=3, aes(shape=condition)) + 
+p <- ggplot(df,aes(x=factor(period),y=mean,linetype=condition)) +
+  geom_point(size=3, aes(shape=condition)) +
   geom_line(aes(x=period,y=mean)) +
-  geom_vline(aes(xintercept=5.5), linetype='dotted') + 
+  geom_vline(aes(xintercept=5.5), linetype='dotted') +
   scale_y_continuous(labels = scales::percent, limits=c(0,1)) +
-  scale_shape_manual(values = c(19,1)) + 
-  theme_bw() + 
+  scale_shape_manual(values = c(19,1)) +
+  theme_bw() +
   labs(
     x = "Round",
     y = "Incidence of War",
     linetype = "Legend",
     shape = "Legend"
-  ) + 
+  ) +
   theme(
     panel.grid.minor = element_blank(),
     #        panel.grid.major = element_blank(),

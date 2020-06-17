@@ -1,8 +1,8 @@
 # Dot Plot
 
-# Shaun Larcom, Ferdinand Rauch, and Tim Willems, 
-#   “The Benefits of Forced Experimentation: Striking Evidence from the 
-#     London Underground Network,” The Quarterly Journal of Economics 132, 
+# Shaun Larcom, Ferdinand Rauch, and Tim Willems,
+#   “The Benefits of Forced Experimentation: Striking Evidence from the
+#     London Underground Network,” The Quarterly Journal of Economics 132,
 #    no. 4 (2017): 2032
 
 # Data: Quek (2017) Rationalist Experiments on War, Fig 2
@@ -22,21 +22,21 @@ df <- master %>%
     mean = mean(war, na.rm=T)
   )
 
-cc <- c("Enforcement in Rounds 1-5" = 'black', 
+cc <- c("Enforcement in Rounds 1-5" = 'black',
         "Enforcement in Rounds 6-10" = 'blue')
 
-p <- ggplot(df,aes(x=factor(period),y=mean,color=condition)) + 
-      geom_point(size=3) + 
+p <- ggplot(df,aes(x=factor(period),y=mean,color=condition)) +
+      geom_point(size=3) +
       geom_line(aes(x=period,y=mean)) +
-      geom_vline(aes(xintercept=5.5), linetype='dotdash') + 
+      geom_vline(aes(xintercept=5.5), linetype='dotdash') +
       scale_y_continuous(labels = scales::percent, limits=c(0,1)) +
       scale_color_manual(values=cc) +
-      theme_bw() + 
+      theme_bw() +
       labs(
         x = "Round",
         y = "Incidence of War",
         color = "Legend"
-      ) + 
+      ) +
       theme(
         panel.grid.minor = element_blank(),
 #        panel.grid.major = element_blank(),
