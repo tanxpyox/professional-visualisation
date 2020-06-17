@@ -22,17 +22,17 @@ df <- master %>%
 
 
 # build plot
-p <- ggplot(df,aes(x=factor(period),y=mean,color=condition)) + 
-  geom_point(size=3) + 
+p <- ggplot(df,aes(x=factor(period),y=mean,color=condition)) +
+  geom_point(size=3) +
   geom_line(aes(x=period,y=mean)) +
-  geom_vline(aes(xintercept=5.5), linetype='dotdash') + 
+  geom_vline(aes(xintercept=5.5), linetype='dotdash') +
   scale_y_continuous(labels = scales::percent, limits=c(0,1)) +
-  theme_bw() + 
+  theme_bw() +
   labs(
     x = "Round",
     y = "Incidence of War",
     color = "Legend"
-  ) + 
+  ) +
   theme(
     panel.grid.minor = element_blank(),
     #        panel.grid.major = element_blank(),

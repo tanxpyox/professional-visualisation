@@ -1,6 +1,6 @@
 # Event Study Plot w/ CI
 
-# Proto, Rustichini, and Sofianos, "Intelligence, Personality, 
+# Proto, Rustichini, and Sofianos, "Intelligence, Personality,
 #  and Gains from Cooperation in Repeated Interactions",
 #  Journal of Political Economy, 1363.
 
@@ -26,17 +26,17 @@ df <- master %>%
 
 df$label <- ifelse(df$enforce11==0, "No Enforcement", "Enforcement")
 
-p <- ggplot(df,aes(x=period, y=mean, group=label, color=label, shape=label)) + 
-     geom_point(size=3) + 
-     geom_line(size=1) + 
-     geom_errorbar(aes(ymax=mean+se,ymin=mean-se),width=0.1) + 
-     theme_bw() + 
+p <- ggplot(df,aes(x=period, y=mean, group=label, color=label, shape=label)) +
+     geom_point(size=3) +
+     geom_line(size=1) +
+     geom_errorbar(aes(ymax=mean+se,ymin=mean-se),width=0.1) +
+     theme_bw() +
      scale_y_continuous(labels = scales::percent, limits=c(0,1)) +
-     scale_colour_manual(values=c('darkgrey','black')) + 
-     scale_shape_manual(values=c(1,19)) + 
+     scale_colour_manual(values=c('darkgrey','black')) +
+     scale_shape_manual(values=c(1,19)) +
      xlab("Round") + ylab("Incidence of War") +
      theme(
-       legend.title = element_blank(), 
+       legend.title = element_blank(),
        legend.position = "bottom",
        panel.grid.major.x = element_blank(),
        panel.grid.minor.x = element_blank(),

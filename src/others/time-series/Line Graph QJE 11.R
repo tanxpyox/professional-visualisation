@@ -1,7 +1,7 @@
-# Time series 
+# Time series
 
-# Ulrike Malmendier, Stefan Nagel, Learning from Inflation Experiences, 
-#   The Quarterly Journal of Economics, 
+# Ulrike Malmendier, Stefan Nagel, Learning from Inflation Experiences,
+#   The Quarterly Journal of Economics,
 #   Volume 131, Issue 1, February 2016, Pages 53–87
 
 # Data: Shiller (2005) Available online at http://www.econ.yale.edu/~shiller/data.htm
@@ -13,11 +13,11 @@ output_dir <- "output"
 df$year <- NA
 df$year <- round(df$Date)
 
-df <- df %>% 
+df <- df %>%
   group_by(year) %>%
   summarize(
     y = mean(CPI)
-  ) 
+  )
 
 df$rate <- NA
 for (i in 2:nrow(df)) {
@@ -26,7 +26,7 @@ for (i in 2:nrow(df)) {
 
 p <- ggplot(df,aes(year,rate))+
   geom_line(colour = 'blue')+
-  theme_bw() + 
+  theme_bw() +
   labs(
     y= "Inflation",
     x = "Year"

@@ -1,10 +1,10 @@
 # Bar Graph with Label
 
-# Eugenio J. Miravete, Katja Seim, and Jeff Thurk, 
-#   “Market Power and the Laffer Curve,” 
+# Eugenio J. Miravete, Katja Seim, and Jeff Thurk,
+#   “Market Power and the Laffer Curve,”
 #   Econometrica 86, no. 5 (2020): 1665
 
-# Data: USA 2020 (not released) 
+# Data: USA 2020 (not released)
 
 master <- read.csv("data/protected/usa-2020.csv")
 output_dir="output"
@@ -30,10 +30,10 @@ sum_table <- master %>%
 
 df <- master %>%
   filter(!is.na(tmp) & tmp!="others") %>% # filter out 'others'
-  group_by(tmp,pride3) %>% 
+  group_by(tmp,pride3) %>%
   summarise(
     count = n(),
-  ) 
+  )
 
 df$percentage <- NA
 
@@ -44,16 +44,16 @@ for (i in 1:6) {
 # Define colour gradients
 cc <- scales::seq_gradient_pal("white", "darkgrey")(seq(0,1,length.out=6))
 
-percent <- function(x, digits = 2, format = "f", ...) { 
+percent <- function(x, digits = 2, format = "f", ...) {
   paste0(formatC(x * 100, format = format, digits = digits, ...), "%")
 }
 
-p <- ggplot(df,aes(x=tmp,y=percentage, fill=factor(pride3) )) + 
-  geom_bar(stat="identity",colour=1) + 
-  geom_text(aes(label=count), position=position_stack(vjust=0.5)) +  
+p <- ggplot(df,aes(x=tmp,y=percentage, fill=factor(pride3) )) +
+  geom_bar(stat="identity",colour=1) +
+  geom_text(aes(label=count), position=position_stack(vjust=0.5)) +
   # show percentage instead:
-  # geom_text(aes(label=percent(percentage)), position=position_stack(vjust=0.5)) +  
-  scale_fill_manual(values=cc) + 
+  # geom_text(aes(label=percent(percentage)), position=position_stack(vjust=0.5)) +
+  scale_fill_manual(values=cc) +
   scale_y_continuous(labels = scales::percent) +
   labs(
     x = "Categories",
