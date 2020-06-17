@@ -40,6 +40,7 @@ vignettes/*.pdf
 
 # Protected data files
 data/protected/*
+!data/protected/*.R
 eddy/*
 output/*
 
