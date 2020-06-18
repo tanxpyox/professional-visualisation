@@ -1,4 +1,6 @@
+Bar Graph AER 1.R
 Bar Graph APSR 1.R
+Bar Graph APSR 2.R
 Bar Graph Econometrica 1.R
 Bar Graph JPE 2.R
 Bar Graph JPE 3.R
