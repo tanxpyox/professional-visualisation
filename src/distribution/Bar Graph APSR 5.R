@@ -43,8 +43,7 @@ ggplot(df,aes(factor(except), mean, fill = factor(pride))) +
   theme_minimal() +
   theme(
     legend.position = "bottom",
-    legend.title = element_blank(),
-    legend.spacing.x = unit(0.1,"cm")
+    legend.title = element_blank()
   ) + coord_flip()
 
 # Save individual Panels
