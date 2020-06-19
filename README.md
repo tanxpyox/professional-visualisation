@@ -5,7 +5,7 @@
 
 Download all output files:
 ```sh
-git clone -b=release https://github.com/tanxpyox/professional-visualisation
+git clone -b release https://github.com/tanxpyox/professional-visualisation
 ```
 
 ## Note
