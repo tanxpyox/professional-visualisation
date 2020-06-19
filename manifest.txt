@@ -52,6 +52,8 @@ Line Graph QJE 9.R
 Pie Chart QJE 1.R
 Regression Table QJE 1A.R
 Regression Table QJE 1B.R
+Scatter Plot APSR 1.R
+Scatter Plot APSR 2.R
 Scatter Plot Econometrica 1.R
 Scatter Plot Econometrica 2.R
 Scatter Plot JPE 1.R
