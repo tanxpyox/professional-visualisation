@@ -3,23 +3,34 @@
 # Setup
 shopt -s globstar
 
+# Set export directory (root if local, /deploy if CI)
+if [ -z "$CI" ]; then
+  export DIR=.
+else
+  export DIR=deploy
+fi
+
 # Initialise
-if [ -d deploy ]; then
-  rm -rf deploy
+if [ -d $DIR/codes ]; then
+  rm -rf $DIR/codes
+fi
+
+if [ -d $DIR/gallery ]; then
+  rm -rf $DIR/gallery
 fi
 
 # Create output folders
-mkdir -p deploy/codes
-mkdir deploy/gallery
+mkdir -p ${DIR}/codes
+mkdir ${DIR}/gallery
 
 # Copy files from src
-cp src/**/*.R deploy/codes
-cp src/**/*.png deploy/gallery
+cp src/**/*.R ${DIR}/codes
+cp src/**/*.png ${DIR}/gallery
 
 # Clean Rproject file from codes if exist
-if [ -f deploy/codes/*.Rproj ]; then
-  rm deploy/codes/*.Rproj
+if [ -f ${DIR}/codes/*.Rproj ]; then
+  rm ${DIR}/codes/*.Rproj
 fi
 
 # Write to manifest
-ls deploy/codes | sort | uniq > deploy/manifest.txt
+ls ${DIR}/codes | sort | uniq > deploy/manifest.txt
