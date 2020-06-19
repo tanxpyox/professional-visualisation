@@ -18,7 +18,6 @@ Bar Graph QJE 1.R
 Bar Graph QJE 2.R
 Bar Graph QJE 3.R
 Bar Graph QJE 4.R
-Bar Graph QJE 5.R
 Bar Graph QJE 6.R
 Dot Plot APSR 1.R
 Dot Plot QJE 1.R
