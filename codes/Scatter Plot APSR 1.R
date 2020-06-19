@@ -29,6 +29,7 @@ output_dir = "output"
 # }
 
 df <- read_dta("data/protected/eddy-democracy.dta") %>%
+  filter(V141>=0) %>%
   group_by(name) %>%
   summarise(
     x = mean(polity2),
@@ -60,4 +61,4 @@ ggplot(df, aes(x,y)) +
 ggsave(path=output_dir, filename="Scatter Plot APSR 1.png",width=8, height=6)
 
 # Save as example
-# ggsave(path="src/relationship", filename="Scatter Plot APSR 1Combined.png", width=8, height=6)
+# ggsave(path="src/relationship", filename="Scatter Plot APSR 1-example.png", width=8, height=6)
