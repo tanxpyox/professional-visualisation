@@ -33,4 +33,4 @@ if [ -f ${DIR}/codes/*.Rproj ]; then
 fi
 
 # Write to manifest
-ls ${DIR}/codes | sort | uniq > deploy/manifest.txt
+ls ${DIR}/codes | sort | uniq > ${DIR}/manifest.txt

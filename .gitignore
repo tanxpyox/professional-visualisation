@@ -48,6 +48,7 @@ output/*
 deploy/*
 codes/*
 gallery/*
+manifest.txt
 
 # Windows Cache Files
 Thumbs.db
