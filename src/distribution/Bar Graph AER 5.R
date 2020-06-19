@@ -56,7 +56,7 @@ p1 <- ggplot(df, aes(period,mean_war, fill = something)) +
 p2 <- ggplot(df, aes(period,mean_reneged, fill = something)) +
   geom_bar(stat = "identity") +
   geom_smooth(aes(color = something), method = "lm",se = F, size = 1, linetype = 2) +
-  xlab("Round") + ylab("Percentage of Wars in Stage 1") +
+  xlab("Round") + ylab("Percentage of Reneged Offers") +
   scale_fill_manual(name = "Legend", values = "cadetblue3", labels = "Percentage") +
   scale_color_manual(name = "Legend", values = 'cyan4', labels = "Trendline") +
   scale_y_continuous(labels = scales::percent, limits=c(0,1)) +
