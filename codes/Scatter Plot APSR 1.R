@@ -42,7 +42,7 @@ df$name = countrycode(df$name, "country.name", "iso3c")
 ggplot(df, aes(x,y)) +
   geom_point() +
   geom_text(aes(label = name), position = position_nudge(0.7)) +
-  geom_smooth(method = "gam", color = 'red') +
+  geom_smooth(method = "loess", span = 2, color = 'red') +
   labs(
     y = "Perceived Level of Democracy\n(1 = Least Democratic, 10 = Most Democratic)",
     x = "Polity V (-10 = Least Democratic, 10 = Most Democratic)"
