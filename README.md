@@ -14,7 +14,7 @@ git clone https://github.com/tanxpyox/professional-visualisation
 * All scripts and output samples are collected and placed in the [`release` branch](https://github.com/tanxpyox/professional-visualisation/tree/release).
 
 ## Usage
-* Open the project by double-clicking the `professional-visualisation.Rproj` file. This will configure the root directory to be the project working directory, and allow file input/output to function normally.
+* Open the project by double-clicking the `professional-visualisation.Rproj` file. This will configure the root directory to be the project working directory, and allow file input/output to function properly.
 * Please create an empty directory `output/` under the root directory - This is the default location where the plotted graphs will be saved.
   * cmd/terminal command: `mkdir output`
 
