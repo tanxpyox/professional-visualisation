@@ -83,7 +83,7 @@ ggsave(path=output_dir, filename="Bar Graph AER 5B.png", p2, width=8, height=6)
 ggsave(path=output_dir, filename="Bar Graph AER 5Combined.png", pc, width=8, height=6)
 
 # Save as Example
-# ggsave(path="src/distribution", filename="Bar Graph AER 5A.png", p1, width=8, height=6)
-# ggsave(path="src/distribution", filename="Bar Graph AER 5B.png", p2, width=8, height=6)
-# ggsave(path="src/distribution", filename="Bar Graph AER 5Combined.png", pc, width=8, height=6)
+# ggsave(path="src/distribution", filename="Bar Graph AER 5A-example.png", p1, width=8, height=6)
+# ggsave(path="src/distribution", filename="Bar Graph AER 5B-example.png", p2, width=8, height=6)
+# ggsave(path="src/distribution", filename="Bar Graph AER 5Combined-example.png", pc, width=8, height=6)
 

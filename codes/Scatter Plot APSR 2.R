@@ -69,4 +69,4 @@ for(i in 1:4) {
 ggsave(path=output_dir, filename="Scatter Plot APSR 2Combined.png", grid.arrange(grobs = output$plots), width=8, height=6)
 
 # Save as example
-# ggsave(path="src/relationship", filename="Scatter Plot APSR 2Combined.png", grid.arrange(grobs = output$plots), width=8, height=6)
+# ggsave(path="src/relationship", filename="Scatter Plot APSR 2Combined-example.png", grid.arrange(grobs = output$plots), width=8, height=6)
